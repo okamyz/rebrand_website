@@ -1,0 +1,182 @@
+/* Tampilkan dropdown saat hover di layar besar */
+@media (min-width: 992px) {
+    .navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; /* hilangkan jarak animasi default */
+    }
+}
+
+.warna1 {
+    background-color: #0093DD;
+}
+
+/* Ukuran teks navbar lebih kecil */
+.navbar .nav-link {
+    font-size: 0.8rem; 
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+.navbar .dropdown-menu {
+    font-size: 0.7rem;
+}
+
+.navbar.bg-body-tertiary {
+    border-bottom: 1px solid #0093DD !important;
+}
+
+.navbar .container-fluid {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+/* Atur tinggi carousel lebih kecil */
+.carousel-inner {
+    height:400px; /* sesuaikan, misal 400px */
+}
+
+/* Semua gambar dalam carousel seragam */
+.carousel-inner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* potong gambar agar tidak distorsi */
+}
+
+/* Warna default navbar link */
+.navbar .nav-link {
+    color: #000000; /* hitam */
+    font-size: 0.85rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Hover efek warna mengikuti palet logo */
+.navbar .nav-link:hover {
+    color: #0093DD; /* biru */
+}
+
+
+/* Dropdown item warna */
+.dropdown-menu .dropdown-item {
+    font-size: 0.8rem;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #0093DD;
+    background-color: #f2f2f2/* biar tetap terbaca */
+}
+
+/* Terapkan font ke seluruh body */
+body, .navbar {
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Layer hitam transparan */
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45); /* atur transparansi di sini */
+    z-index: 1;
+}
+
+/* Teks overlay di tengah */
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    z-index: 2; /* supaya muncul di atas overlay */
+}
+
+.carousel-text h2 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.carousel-text p {
+    font-size: 0.9rem;
+}
+
+.informasi a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: small;
+    font-weight: 500;
+}
+
+.informasi a:hover {
+    color: #0093DD;
+    text-decoration: none;
+}
+
+/* Card default */
+.informasi .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek smooth scale saat hover */
+.informasi .card:hover,
+.informasi .card a:hover {
+    transform: scale(1.05); /* membesar halus */
+    z-index: 5; /* biar muncul di depan elemen lain */
+}
+
+.foto-kepsek {
+    border: 4px solid #ffffff; /* warna biru logo */
+    border-radius: 50%; /* pastikan bulat */
+    object-fit: cover; /* supaya foto proporsional */
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #f8f9fa; /* lebih terang saat hover */
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+footer a,
+footer p {
+  font-size: 0.9rem; /* sedikit lebih kecil dari default */
+}
+
+footer small {
+  font-size: 0.8rem; /* kalau ada <small> juga ikut dikecilkan */
+}
+
