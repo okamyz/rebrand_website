@@ -122,7 +122,7 @@
     </div>
 
     <!-- Section Kontak & Peta -->
-    <div class="container my-5">
+    <div class="container my-5" id="kontak">
         <div class="row g-4 align-items-center">
             <!-- Kolom Kontak -->
             <div class="col-lg-4">

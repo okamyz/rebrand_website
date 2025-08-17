@@ -180,3 +180,100 @@ footer small {
   font-size: 0.8rem; /* kalau ada <small> juga ikut dikecilkan */
 }
 
+/* ======== SECTION BERITA ======== */
+.news-list h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0093DD; /* biru logo */
+}
+
+.news-list .list-group-item {
+  border: none;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.news-list .list-group-item a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.news-list .list-group-item:hover {
+  border-left: 4px solid #0093DD;
+  background-color: #f8f9fa;
+}
+
+.news-list .list-group-item:hover a {
+  color: #0093DD;
+}
+
+/* Area konten berita */
+#content-area {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  min-height: 300px;
+  transition: all 0.3s ease;
+}
+
+#content-area h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0093DD;
+  margin-bottom: 1rem;
+}
+
+#content-area p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hover efek halus pada perubahan konten */
+#content-area {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .news-list {
+    margin-bottom: 1.5rem;
+  }
+}
+/* Hover efek untuk item galeri */
+.gallery-item img {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05); /* zoom halus */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Modal custom border */
+#galleryModal .modal-content {
+  border: 3px solid #424242;   /* warna biru sesuai tema */
+  border-radius: 12px;
+  overflow: hidden;            /* supaya rapi */
+}
+
+/* Animasi modal custom */
+.modal.fade .modal-dialog {
+  transform: translateY(50px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.modal.fade.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}

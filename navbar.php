@@ -30,19 +30,23 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="berita.php">BERITA</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="#">LOMBA</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#informasi.php">INFORMASI</a>
+                    <a class="nav-link" href="informasi.php">INFORMASI</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">KONTAK</a>
+                    <a class="nav-link" href="#kontak">KONTAK</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PENGADUAN</a>
+                    <a class="nav-link" href="pengaduan.php">PENGADUAN</a>
                 </li>
             </ul>
         </div>
