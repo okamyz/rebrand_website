@@ -1,4 +1,4 @@
-# Rebrand Website – SDN Bringin 01, Semarang
+# Rebrand Website – SDN Bringin 01, Kota Semarang
 
 This repository contains the redesigned website for **SDN Bringin 01**, a primary school in Semarang. Our goal was to modernize the user interface and improve overall usability while retaining simplicity and accessibility.
 
