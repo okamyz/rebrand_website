@@ -15,8 +15,9 @@ include 'cek_login.php';
     <div class="container mt-4">
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Selamat Datang, <?php echo htmlspecialchars($_SESSION['nama_lengkap']); ?>!</h1>
-                <a href="#" class="btn btn-primary btn-lg">Kelola Berita</a>
+                <!-- <h1 class="display-5 fw-bold">Selamat Datang, <?php echo htmlspecialchars($_SESSION['nama_lengkap']); ?>!</h1> -->
+                <h1 class="display-5 fw-bold">Ini dasbor, ntar dihias</h1>
+                <!-- <a href="#" class="btn btn-primary btn-lg">Kelola Berita</a> -->
             </div>
         </div>
     </div>
