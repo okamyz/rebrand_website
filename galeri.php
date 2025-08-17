@@ -1,3 +1,6 @@
+<?php
+include 'koneksi.php';  
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,157 +17,39 @@
     <!-- bar navbar -->
     <?php include 'navbar.php'; ?>
     <!-- ====== GALERI 3 KOLOM (UPDATED) ====== -->
-<div class="container my-5">
+
+  <!-- tampilin item dari database -->
+  <div class="container my-5">
   <div class="row g-4">
+    <?php
+      include 'koneksi.php';
 
-    <!-- Item 1 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="SPMB KOTA SEMARANG TAHUN 2025/2026"
-           data-text=""
-           data-img="img/galeri/1.jpeg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/1.jpeg" alt="SPMB KOTA SEMARANG TAHUN 2025/2026"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <!-- Overlay judul -->
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">SPMB KOTA SEMARANG TAHUN 2025/2026</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 2 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Gerakan Urban Farming dan Kerja Bakti Massal Kota Semarang"
-           data-text="SDN Bringin 01 siap sukseskan gerakan menanam dan kerja bakti massal"
-           data-img="img/galeri/2.jpg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/2.jpg" alt="Gerakan Urban Farming dan Kerja Bakti Massal Kota Semarang"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Gerakan Urban Farming dan Kerja Bakti Massal Kota Semarang</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 3 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Selamat dan Sukses atas dilantinya Hevearita G. Rahayu (Mbak Ita) sebagai Wali Kota Semarang Tahun 2021-2026"
-           data-text="SDN Bringin 01 mengucapkan selamat dan sukses atas dilantiknya Hevearita G. Rahayu (Mbak Ita) sebagai Wali Kota Semarang Tahun 2021-2026"
-           data-img="img/galeri/3.jpg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/3.jpg" alt="Selamat dan Sukses atas dilantinya Hevearita G. Rahayu (Mbak Ita) sebagai Wali Kota Semarang Tahun 2021-2026"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Selamat dan Sukses atas dilantinya Hevearita G. Rahayu (Mbak Ita) sebagai Wali Kota Semarang Tahun 2021-2026</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 4 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Peringatan Hari Kartini SD NEGERI BRINGIN 01"
-           data-text="Pendidik, Tenaga Kependidikan dan seluruh peserta didik SD NEGERI BRINGIN 01 berbahagia memperingati HARI KARTINI dengan mengenakan pakaian tradisional INDONESIA"
-           data-img="img/galeri/4.jpg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/4.jpg" alt="Peringatan Hari Kartini SD NEGERI BRINGIN 01"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Peringatan Hari Kartini SD NEGERI BRINGIN 01</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 5 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Upacara Hari Guru"
-           data-text="Upacara Hari Guru tanggal 25 November tahun 2020 beserta pemberian penghargaan bagi guru berprestasi di SD NEGERI BRINGIN 01."
-           data-img="img/galeri/5.jpeg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/5.jpeg" alt="Upacara Hari Guru"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Upacara Hari Guru</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 6 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Peringatan Hari Transportasi Umum di SD NEGERI BRINGIN 01"
-           data-text="Kepala Sekolah SD NEGERI BRINGIN 01, Ibu SRIYANTI, S.Pd berangkat bekerja ke SD NEGERI BRINGIN 01 dengan naik transportasi umum online."
-           data-img="img/galeri/6.jpeg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/6.jpeg" alt="Peringatan Hari Transportasi Umum di SD NEGERI BRINGIN 01"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Peringatan Hari Transportasi Umum di SD NEGERI BRINGIN 01</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 7 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Penerapan Protokol Kesehatan di SDN Bringin 01"
-           data-text="Pak Puryanto selalu mencuci tangan setiap memasuki SD NEGERI BRINGIN 01"
-           data-img="img/galeri/7.jpeg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/7.jpeg" alt="Penerapan Protokol Kesehatan di SDN Bringin 01"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Penerapan Protokol Kesehatan di SDN Bringin 01</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 8 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Dukungan Stakeholder dalam Pembelajaran Tatap Muka di SDN Bringin 01"
-           data-text="Beberapa dokumentasi dalam kegiatan Pembelajaran Tatap Muka di SDN Bringin 01."
-           data-img="img/galeri/8.jpeg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/8.jpeg" alt="Dukungan Stakeholder dalam Pembelajaran Tatap Muka di SDN Bringin 01"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Dukungan Stakeholder dalam Pembelajaran Tatap Muka di SDN Bringin 01</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Item 9 -->
-    <div class="col-12 col-md-4">
-      <div class="card border-0 shadow-sm gallery-item"
-           data-title="Selamat Hari Raya Waisak 2565 BE"
-           data-text="Selamat Hari Raya Waisak"
-           data-img="img/galeri/9.jpg">
-        <div class="position-relative rounded-3 overflow-hidden gallery-click">
-          <img src="img/galeri/9.jpg" alt="Selamat Hari Raya Waisak 2565 BE"
-               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
-          <div class="position-absolute bottom-0 start-0 end-0 p-2"
-               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
-            <span class="text-white fw-semibold small d-block text-truncate">Selamat Hari Raya Waisak 2565 BE</span>
-          </div>
-        </div>
-      </div>
-    </div>
+      $query = "SELECT * FROM galeri ORDER BY id_foto DESC"; 
+      $result = mysqli_query($koneksi, $query);
 
-  </div>
+      while ($data = mysqli_fetch_assoc($result)) {
+    ?>
+    <div class="col-12 col-md-4">
+      <div class="card border-0 shadow-sm gallery-item"
+           data-title="<?php echo htmlspecialchars($data['judul_foto']); ?>"
+           data-text="<?php echo htmlspecialchars($data['keterangan_foto']); ?>"
+           data-img="img/galeri/<?php echo $data['nama_file_gambar']; ?>">
+        <div class="position-relative rounded-3 overflow-hidden gallery-click">
+          <img src="img/galeri/<?php echo $data['nama_file_gambar']; ?>" alt="<?php echo htmlspecialchars($data['judul_foto']); ?>"
+               class="w-100 d-block gallery-img" style="aspect-ratio:16/10; object-fit:cover;">
+          <div class="position-absolute bottom-0 start-0 end-0 p-2"
+               style="background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.6));">
+            <span class="text-white fw-semibold small d-block text-truncate"><?php echo htmlspecialchars($data['judul_foto']); ?></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php
+      } 
+    ?>
 </div>
+</div>
+
     <!-- ===== MODAL GALERI ===== -->
     <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">

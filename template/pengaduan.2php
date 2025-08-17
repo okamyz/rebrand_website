@@ -22,13 +22,14 @@
           <h3 class="fw-bold mb-3">Form Pengaduan</h3>
           <p class="text-muted mb-4">Silakan isi data berikut dengan benar.</p>
 
-          <form action="proses_pengaduan.php"
-            id="open"
-            class="needs-validation"
-            autocomplete="on"
-            method="post"
-            accept-charset="utf-8"
-            novalidate>
+          <form action="https://sdnbringin01.dikdas.semarangkota.go.id/page/pengaduan"
+                id="open"
+                class="needs-validation"
+                autocomplete="on"
+                enctype="multipart/form-data"
+                method="post"
+                accept-charset="utf-8"
+                novalidate>
             <!-- Hidden fields (sesuai permintaan) -->
             <input type="hidden" name="form_name" value="complain">
             <input type="hidden" name="email_title" value="New Inquiry from Complain">
@@ -105,7 +106,7 @@
     <footer class="bg-dark text-white mt-5">
         <div class="container py-4">
             <div class="row">
-                // <!-- Kolom 1: Tautan -->
+                <!-- Kolom 1: Tautan -->
                 <div class="col-md-4 mb-3">
                     <h5 class="fw-bold">Tautan</h5>
                     <br>
