@@ -34,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOMBA</a>
+                    <a class="nav-link" href="lomba.php">LOMBA</a>
                 </li>
 
                 <li class="nav-item">
