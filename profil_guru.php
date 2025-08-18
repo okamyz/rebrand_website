@@ -68,6 +68,5 @@
     <footer class="bg-dark text-white mt-5">
         <?php include 'footer.php'; ?>
     </footer>
-
 </body>
 </html>
