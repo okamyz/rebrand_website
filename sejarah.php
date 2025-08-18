@@ -53,6 +53,9 @@ include 'data_dummy.php';
         </div>
     </main>
     
-    <?php include 'footer.php'; ?>
+    <footer class="bg-dark text-white mt-5">
+        <?php include 'footer.php'; ?>
+    </footer>
+    
 </body>
 </html>
