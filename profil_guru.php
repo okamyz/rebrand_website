@@ -24,7 +24,6 @@
     <div class="team-section">
         <div class="header">
             <h1>Profil Guru</h1>
-            <p>Berikut adalah daftar guru beserta jabatan, mata pelajaran, dan deskripsi singkat mereka.</p>
         </div>
 
         <div class="team-grid">
@@ -69,6 +68,6 @@
     <footer class="bg-dark text-white mt-5">
         <?php include 'footer.php'; ?>
     </footer>
-    
+
 </body>
 </html>
