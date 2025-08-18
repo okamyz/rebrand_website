@@ -22,7 +22,6 @@
                         <li><a class="dropdown-item" href="visi_misi.php">SEKOLAH</a></li>
                         <li><a class="dropdown-item" href="sejarah.php">SEJARAH</a></li>
                         <li><a class="dropdown-item" href="profil_guru.php">GURU</a></li>
-                        <li><a class="dropdown-item" href="prestasi.php">PRESTASI</a></li>
                     </ul>
                 </li>
 

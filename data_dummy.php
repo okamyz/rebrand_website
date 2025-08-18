@@ -22,7 +22,6 @@ $menu_sidebar = [
     "Visi dan Misi" => "visi_misi.php",
     "Profil Guru" => "profil_guru.php",
     "Sejarah" => "sejarah.php",
-    "Prestasi" => "prestasi.php",
 ];  
 
 $prestasi = [
