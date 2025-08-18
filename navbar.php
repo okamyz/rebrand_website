@@ -38,10 +38,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="informasi.php">INFORMASI</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="#kontak">KONTAK</a>
                 </li>
 

@@ -94,30 +94,37 @@
             </div>
 
 
-        <!-- Kolom kanan: Pengumuman -->
-            <div class="col-md-4 mb-4 informasi">
-                <h3 class="mb-3 font-weight-bold">Informasi</h3>
-                    <div class="card mb-3 shadow-sm">
-                        <div class="card-body p-3">
-                            <h5>📢 22-23 Juni 2025</h5>
-                            <a href="#">Batas pendaftaran ulang bagi peserta didik yang diterima</a>
-                        </div>
-                    </div>
+        <!-- Kolom kanan: Berita -->
+        <div class="col-md-4 mb-4 informasi">
+            <h3 class="mb-3 font-weight-bold">Berita</h3>
 
-                    <div class="card mb-3 shadow-sm">
-                        <div class="card-body p-3">
-                            <h5>📢 18-20 Juni 2025</h5>
-                            <a href="#">Mulai isi formulir pendaftaran</a>
-                        </div>
-                    </div>
+            <?php
+                include 'koneksi.php';
 
-                    <div class="card mb-3 shadow-sm">
-                        <div class="card-body p-3">
-                            <h5>📢 13-18 Juni 2025</h5>
-                            <a href="#">Batas isi pra-pendaftaran</a>
-                        </div>
-                    </div>
-            </div>
+                // Ambil 3 berita terbaru
+                $query_berita = "SELECT id_berita, judul, tanggal_publikasi 
+                                FROM berita 
+                                ORDER BY tanggal_publikasi DESC 
+                                LIMIT 5";
+                $result_berita = mysqli_query($koneksi, $query_berita);
+
+                if(mysqli_num_rows($result_berita) > 0) {
+                    while($row = mysqli_fetch_assoc($result_berita)) {
+                        $tanggal = date("d-m-Y", strtotime($row['tanggal_publikasi']));
+                        echo '
+                            <div class="card mb-3 shadow-sm">
+                                <div class="card-body p-3">
+                                    <h6>📢 ' . $tanggal . '</h6>
+                                    <a href="berita.php?id=' . $row['id_berita'] . '">' . htmlspecialchars($row['judul']) . '</a>
+                                </div>
+                            </div>
+                        ';
+                    }
+                } else {
+                    echo '<p>Belum ada berita terbaru.</p>';
+                }
+            ?>
+        </div>
         </div>
     </div>
 

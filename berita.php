@@ -25,7 +25,7 @@
     <main class="flex-grow-1">
         <div class="container mt-5">
         <div class="row card shadow-sm p-4 rounded-4">
-            <div id="news-list" class="col-md-12 news-list">
+            <div id="news-list" class="col-md-12 news-list <?php echo isset($_GET['id']) ? 'hidden' : ''; ?>">
                 <h4>Daftar Berita</h4>
                 <ul class="list-group">
                     <?php
@@ -48,8 +48,24 @@
                 </ul>
             </div>
 
-            <div id="content-area" class="col-md-12 hidden">
-                </div>
+            <div id="content-area" class="col-md-12">
+                <?php
+                    if (isset($_GET['id'])) {
+                        $id = intval($_GET['id']); // amankan input
+                        $query_detail = "SELECT judul, isi_berita, gambar_berita FROM berita WHERE id_berita=$id";
+                        $result_detail = mysqli_query($koneksi, $query_detail);
+
+                        if ($row = mysqli_fetch_assoc($result_detail)) {
+                            echo "<h3>" . htmlspecialchars($row['judul']) . "</h3>";
+                            echo "<img src='img/berita/" . htmlspecialchars($row['gambar_berita']) . "' class='img-fluid rounded-5'>";
+                            echo "<div>" . nl2br(htmlspecialchars($row['isi_berita'])) . "</div>";
+                            echo "<a href='berita.php' class='btn btn-primary mt-3'>Kembali ke Daftar Berita</a>";
+                        } else {
+                            echo "<p>Berita tidak ditemukan.</p>";
+                        }
+                    }
+                ?>
+            </div>
         </div>
         </div>
     </main>
