@@ -61,7 +61,7 @@
     <script>
         <?php
             // Ambil SEMUA data berita untuk dimasukkan ke JavaScript
-            $query_js = "SELECT id_berita, judul, isi_berita FROM berita";
+            $query_js = "SELECT id_berita, judul, isi_berita, gambar_berita FROM berita";
             $result_js = mysqli_query($koneksi, $query_js);
             
             // Siapkan object JavaScript
@@ -70,9 +70,11 @@
                 // json_encode digunakan agar teks dari PHP aman untuk dimasukkan ke string JavaScript
                 $js_title = json_encode($data['judul']);
                 $js_content = json_encode($data['isi_berita']);
+                $js_image = json_encode("img/berita/" . $data['gambar_berita']);
+
 
                 // Cetak setiap item berita sebagai properti object
-                echo "'{$data['id_berita']}': { title: {$js_title}, content: {$js_content} },";
+                echo "'{$data['id_berita']}': { title: {$js_title}, content: {$js_content}, image: {$js_image}, },";
             }
             echo "};";
         ?>
@@ -88,6 +90,7 @@
 
             area.innerHTML = `
                 <h3>${berita[id].title}</h3>
+                <img src="${berita[id].image}" class="img-fluid rounded-5">
                 <div>${berita[id].content}</div>
                 <button class="btn btn-primary mt-3" onclick="goBack()">Kembali ke Daftar Berita</button>
             `;
@@ -96,7 +99,7 @@
         function goBack() {
             const list = document.getElementById("news-list");
             const area = document.getElementById("content-area");
-
+            
             area.classList.add("hidden");
             list.classList.remove("hidden");
         }

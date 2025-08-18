@@ -20,42 +20,48 @@ include '../koneksi.php';
         </button>
         
         <table class="table table-bordered table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>No</th>
-                    <th>Judul</th>
-                    <th>Tanggal Publikasi</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $query = "SELECT * FROM berita ORDER BY tanggal_publikasi DESC";
-                    $result = mysqli_query($koneksi, $query);
-                    $no = 1;
-                    while($data = mysqli_fetch_assoc($result)){
-                ?>
-                <tr>
-                    <td><?php echo $no++; ?></td>
-                    <td><?php echo htmlspecialchars($data['judul']); ?></td>
-                    <td><?php echo date('d M Y, H:i', strtotime($data['tanggal_publikasi'])); ?></td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-sm edit-btn" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#editBeritaModal"
-                                data-id="<?php echo $data['id_berita']; ?>"
-                                data-judul="<?php echo htmlspecialchars($data['judul']); ?>"
-                                data-isi="<?php echo htmlspecialchars($data['isi_berita']); ?>">
-                            Edit
-                        </button>
-                        <a href="hapus_berita.php?id=<?php echo $data['id_berita']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</a>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
+          <thead class="table-dark">
+              <tr>
+                  <th>No</th>
+                  <th>Judul</th>
+                  <th>Isi Berita</th>
+                  <th>Gambar Berita</th>
+                  <th>Tanggal Publikasi</th>
+                  <th>Aksi</th>
+              </tr>
+          </thead>
+          <tbody>
+            <?php
+                $query = "SELECT * FROM berita ORDER BY tanggal_publikasi DESC";
+                $result = mysqli_query($koneksi, $query);
+                $no = 1;
+                while($data = mysqli_fetch_assoc($result)) {
+            ?>
+            <tr>
+                <td><?php echo $no++; ?></td>
+                <td><?php echo htmlspecialchars($data['judul']); ?></td>
+                <td><?php echo nl2br(htmlspecialchars(substr($data['isi_berita'], 0, 100))) . '...'; ?></td>
+                <td>
+                    <?php if(!empty($data['gambar_berita'])) { ?>
+                      <img src="../img/berita/<?php echo $data['gambar_berita']; ?>" alt="Gambar Berita" width="120" class="img-thumbnail">
+                    <?php } else { ?>
+                      <span class="text-muted">Tidak ada gambar</span>
+                    <?php } ?>
+                </td>
+                <td><?php echo date('d M Y, H:i', strtotime($data['tanggal_publikasi'])); ?></td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm edit-btn" data-bs-toggle="modal"
+                    data-bs-target="#editBeritaModal" data-id="<?php echo $data['id_berita']; ?>" data-judul="<?php echo htmlspecialchars($data['judul']); ?>" data-isi="<?php echo htmlspecialchars($data['isi_berita']); ?>" data-gambar="<?php echo $data['gambar_berita']; ?>">Edit</button>
+                    
+                    <a href="hapus_berita.php?id=<?php echo $data['id_berita']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</a>
+                </td>
+            </tr>
+          <?php } ?>
+          </tbody>
         </table>
     </div>
 
+        <!-- Modal Tambah -->
     <div class="modal fade" id="tambahBeritaModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -64,7 +70,8 @@ include '../koneksi.php';
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="proses_berita.php" method="post">
+            <!-- WAJIB pakai enctype -->
+            <form action="proses_berita.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="judul" class="form-label">Judul Berita</label>
                     <input type="text" class="form-control" id="judul" name="judul" required>
@@ -72,6 +79,10 @@ include '../koneksi.php';
                 <div class="mb-3">
                     <label for="isi_berita" class="form-label">Isi Berita</label>
                     <textarea class="form-control" id="isi_berita" name="isi_berita" rows="10" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="gambar" class="form-label">Pilih Gambar</label>
+                    <input class="form-control" type="file" id="gambar" name="gambar" required>
                 </div>
           </div>
           <div class="modal-footer">
@@ -83,6 +94,7 @@ include '../koneksi.php';
       </div>
     </div>
 
+    <!-- Modal Edit -->
     <div class="modal fade" id="editBeritaModal" tabindex="-1">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -91,8 +103,11 @@ include '../koneksi.php';
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form action="proses_berita.php" method="post">
+            <!-- WAJIB pakai enctype -->
+            <form action="proses_berita.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_berita" id="edit-id">
+                <input type="hidden" name="gambar_lama" id="edit-gambar-lama">
+
                 <div class="mb-3">
                     <label for="edit-judul" class="form-label">Judul Berita</label>
                     <input type="text" class="form-control" id="edit-judul" name="judul" required>
@@ -100,6 +115,13 @@ include '../koneksi.php';
                 <div class="mb-3">
                     <label for="edit-isi" class="form-label">Isi Berita</label>
                     <textarea class="form-control" id="edit-isi" name="isi_berita" rows="10" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="edit-gambar" class="form-label">Gambar Berita (opsional)</label>
+                  <input type="file" class="form-control" id="edit-gambar" name="gambar_berita">
+                  <div class="mt-2">
+                      <img id="preview-gambar" src="" alt="Preview Gambar" width="120" class="img-thumbnail" style="display:none;">
+                  </div>
                 </div>
           </div>
           <div class="modal-footer">
@@ -111,25 +133,45 @@ include '../koneksi.php';
       </div>
     </div>
 
+
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
-    // JavaScript untuk mengirim data ke modal edit
     document.addEventListener('DOMContentLoaded', function () {
-        // Ambil semua tombol dengan class 'edit-btn'
         var editButtons = document.querySelectorAll('.edit-btn');
         
         editButtons.forEach(function (button) {
             button.addEventListener('click', function () {
-                // Ambil data dari atribut data-*
                 var id = this.getAttribute('data-id');
                 var judul = this.getAttribute('data-judul');
                 var isi = this.getAttribute('data-isi');
+                var gambar = this.getAttribute('data-gambar');
                 
-                // Masukkan data ke dalam form di modal edit
+                // isi form edit
                 document.getElementById('edit-id').value = id;
                 document.getElementById('edit-judul').value = judul;
                 document.getElementById('edit-isi').value = isi;
+                document.getElementById('edit-gambar-lama').value = gambar;
+
+                // tampilkan preview gambar
+                if (gambar) {
+                    document.getElementById('preview-gambar').src = "../img/berita/" + gambar;
+                    document.getElementById('preview-gambar').style.display = "block";
+                } else {
+                    document.getElementById('preview-gambar').style.display = "none";
+                }
             });
+        });
+
+        // preview gambar baru sebelum upload
+        document.getElementById('edit-gambar').addEventListener('change', function (e) {
+            if (e.target.files && e.target.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (ev) {
+                    document.getElementById('preview-gambar').src = ev.target.result;
+                    document.getElementById('preview-gambar').style.display = "block";
+                }
+                reader.readAsDataURL(e.target.files[0]);
+            }
         });
     });
     </script>
