@@ -55,7 +55,7 @@
     </main>
 
     <footer class="bg-dark text-white mt-5">
-        ... (Bagian footer tidak perlu diubah, biarkan seperti semula) ...
+        <?php include 'footer.php'; ?>
     </footer>
 
     <script>
