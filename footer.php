@@ -1,4 +1,4 @@
-<div class="container py-4">
+<div class="container py-4" id="kontak">
             <div class="row">
                 <!-- Kolom 1: Tautan -->
                 <div class="col-md-4 mb-3">
