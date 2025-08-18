@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2025 at 08:14 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Aug 18, 2025 at 06:55 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `admin` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `nama_lengkap` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
@@ -54,7 +54,7 @@ CREATE TABLE `berita` (
   `isi_berita` text NOT NULL,
   `gambar_berita` varchar(100) DEFAULT NULL,
   `tanggal_publikasi` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `berita`
@@ -76,7 +76,7 @@ CREATE TABLE `galeri` (
   `judul_foto` varchar(255) NOT NULL,
   `keterangan_foto` text DEFAULT NULL,
   `nama_file_gambar` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `galeri`
@@ -97,7 +97,7 @@ CREATE TABLE `guru` (
   `nama` varchar(255) NOT NULL,
   `jabatan` varchar(100) NOT NULL,
   `foto` mediumblob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `guru`
@@ -129,6 +129,29 @@ INSERT INTO `guru` (`id`, `nama`, `jabatan`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lomba`
+--
+
+CREATE TABLE `lomba` (
+  `id_lomba` int(11) NOT NULL,
+  `judul_kegiatan` varchar(255) NOT NULL,
+  `daftar_peserta` text DEFAULT NULL,
+  `path_foto` varchar(255) NOT NULL,
+  `link_youtube` varchar(255) NOT NULL,
+  `link_gdrive` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `lomba`
+--
+
+INSERT INTO `lomba` (`id_lomba`, `judul_kegiatan`, `daftar_peserta`, `path_foto`, `link_youtube`, `link_gdrive`) VALUES
+(1, 'Lomba Cerdas Cermat', '1. HIMAWAN AHMAD FAUZI\r\n2. BITAQUILLA ZAGIA AZZAHRA\r\n3. SYIFA MAR\'ATUL KHOIRIYAH', 'img/lomba/1755535579_lcc sdn bringin 01 mapsi 2021.jpeg', '', 'https://drive.google.com/file/d/1UYK9XdEC7XZnt-6jRf9CotzXH3hPfjlC/view?usp=drivesdk'),
+(2, 'Lomba Murattal', '1. FITZAL ASHFA LUBNA\r\n2. KURNIA ZAIN CHOLISATUN MARFU\'AH', 'img/lomba/1755535793_lomba murattal mapsi 2021.jpeg', '', 'https://drive.google.com/file/d/1VnuDcpwU0SLb9oA-3OolL-DyOCuv0qH2/view?usp=drivesdk');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pengaduan`
 --
 
@@ -139,7 +162,7 @@ CREATE TABLE `pengaduan` (
   `nomor_kontak` varchar(20) NOT NULL,
   `deskripsi` text NOT NULL,
   `tanggal_masuk` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -152,7 +175,7 @@ CREATE TABLE `pengumuman` (
   `judul_pengumuman` varchar(255) NOT NULL,
   `tanggal_penting` varchar(50) NOT NULL,
   `link_pengumuman` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -182,6 +205,12 @@ ALTER TABLE `galeri`
 --
 ALTER TABLE `guru`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lomba`
+--
+ALTER TABLE `lomba`
+  ADD PRIMARY KEY (`id_lomba`);
 
 --
 -- Indexes for table `pengaduan`
@@ -222,6 +251,12 @@ ALTER TABLE `galeri`
 --
 ALTER TABLE `guru`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `lomba`
+--
+ALTER TABLE `lomba`
+  MODIFY `id_lomba` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pengaduan`
