@@ -147,7 +147,7 @@
                         sdnbringin01@gmail.com
                     </p>
 
-                    <a href="https://www.google.com/maps" target="_blank" class="btn btn-primary mt-3">
+                    <a href="https://maps.app.goo.gl/WyXxCjha5Na6h9os6" target="_blank" class="btn btn-primary mt-3">
                         <i class="fas fa-external-link-alt me-2"></i> Lihat di Google Maps
                     </a>
                 </div>
