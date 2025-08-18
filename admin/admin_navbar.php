@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="kelola_galeri.php">Kelola Galeri</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kelola_guru.php">Kelola Guru</a>
+                </li>
                  <li class="nav-item">
                     <a class="nav-link" href="lihat_pengaduan.php">Lihat Pengaduan</a>
                 </li>
