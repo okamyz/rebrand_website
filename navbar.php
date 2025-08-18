@@ -19,9 +19,9 @@
                         PROFIL
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">SEKOLAH</a></li>
-                        <li><a class="dropdown-item" href="#">SEJARAH</a></li>
-                        <li><a class="dropdown-item" href="#">GURU</a></li>
+                        <li><a class="dropdown-item" href="visi_misi.php">SEKOLAH</a></li>
+                        <li><a class="dropdown-item" href="sejarah.php">SEJARAH</a></li>
+                        <li><a class="dropdown-item" href="profil_guru.php">GURU</a></li>
                     </ul>
                 </li>
 
